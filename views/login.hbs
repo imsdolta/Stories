@@ -1,0 +1,29 @@
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="https://cdn.pixabay.com/photo/2011/12/14/12/21/orion-nebula-11107__340.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3 class="text-darken">Story Books</h3>
+          <h5 class="light grey-text text-lighten-3">A place to create stories</h5>
+
+        <div class="section center">
+
+            <a href="/auth/google" class="btn red darken-1">
+            <i class="fab fa-google left ">Login with google</i></a>
+            
+                <br><br>    
+    
+            <a href="/auth/github" class="btn grey darken-1">
+            <i class="fab fa-github left">Login with Github</i></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.slider');
+        var instances = M.Slider.init(elems, 'indicators');
+  });
+  </script>
