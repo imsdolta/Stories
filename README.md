@@ -3,8 +3,26 @@
 Application to write and share stories 
 
 ###  Live demo [stories](https://node-story-app.herokuapp.com/) 
-
-
+---
+## 📂 What's inside?
+---
+```
+.
+├── helper
+|── middleware
+│── models
+├── public
+├── routes
+└── views
+│    ├─── error
+│    │─── layouts
+│    ├─── partials
+│    └─── stories
+│-- index.js
+│-- package.json
+└─── README
+```
+---
 ## Tech
 - ### node.js
 - ### MongoDB (mongoose)
@@ -14,6 +32,7 @@ Application to write and share stories
 - ### sessions
 - ### handlebars (hbs) template engine 
 
+---
 
 ## Installation
 
@@ -40,3 +59,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+
+
+
+
