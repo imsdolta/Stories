@@ -24,14 +24,14 @@ Application to write and share stories
 ```
 ---
 ## Tech
-- ## node.js
-- ## MongoDB (mongoose)
-- ## Express
-- ## Google OAuth
-- ## passport
-- ## sessions
-- ## handlebars (hbs) template engine 
-- ## Materialize 
+-  node.js
+-  MongoDB (mongoose)
+-  Express
+-  Google OAuth
+-  passport
+-  sessions
+-  handlebars (hbs) template engine 
+-  Materialize 
 
 ---
 
