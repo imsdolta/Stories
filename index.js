@@ -7,14 +7,13 @@ const morgan = require('morgan')
 const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
-// const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const connectDB = require('./config/db')
 
 
 // load config 
-dotenv.config({path: './config/config.env'})
+dotenv.config({ path: './config/config.env' })
 
 // passport config
 const passport = require('./config/passport')
@@ -26,20 +25,20 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 // Method override
 app.use(
-    methodOverride(function (req, res) {
-      if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-        // look in urlencoded POST bodies and delete it
-        let method = req.body._method
-        delete req.body._method
-        return method
-      }
+    methodOverride(function(req, res) {
+        if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+            // look in urlencoded POST bodies and delete it
+            let method = req.body._method
+            delete req.body._method
+            return method
+        }
     })
-  )
+)
 
 // Handlebars Helpers
 const {
@@ -48,27 +47,27 @@ const {
     truncate,
     editIcon,
     select,
-  } = require('./helpers/hbs')
+} = require('./helpers/hbs')
 
 
 // HBS setup 
 app.engine(
     '.hbs',
     exphbs({
-      helpers: {
-        formatDate,
-        stripTags,
-        truncate,
-        editIcon,
-        select,
-      },
-      defaultLayout: 'main',
-      extname: '.hbs',
-      layoutsDir: "views/layouts/"
+        helpers: {
+            formatDate,
+            stripTags,
+            truncate,
+            editIcon,
+            select,
+        },
+        defaultLayout: 'main',
+        extname: '.hbs',
+        layoutsDir: "views/layouts/"
     })
 )
 
-app.set('view engine','.hbs')
+app.set('view engine', '.hbs')
 
 
 
@@ -78,8 +77,8 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
-    store : new MongoStore({mongooseConnection: mongoose.connection})
-  }))
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+}))
 
 // passport middleware 
 app.use(passport.initialize())
@@ -95,16 +94,16 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 
-if(process.env.NODE_ENV === 'development'){
+if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
 
 //Routes
-app.use('/',require('./routes/index'))
-app.use('/auth',require('./routes/auth'))
-app.use('/stories',require('./routes/stories'))
+app.use('/login', require('./routes/index'))
+app.use('/auth', require('./routes/auth'))
+app.use('/stories', require('./routes/stories'))
 
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 
-app.listen(PORT , console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
+app.listen(PORT, console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
