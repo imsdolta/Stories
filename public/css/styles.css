@@ -164,6 +164,11 @@ h3 {
   color: hsl(0, 0%, 100%);
   font-size: 1.5em;
 }
+.sub-heading {
+  margin: 100px 0px;
+  font-size: 24px;
+  color: #ffffff;
+}
 
 p {
   color: hsl(0, 0%, 100%);
@@ -405,6 +410,7 @@ footer {
   list-style-type: none;
   cursor: pointer;
   font-size: 1.5em;
+  width: 10%;
 }
 .social a {
   width: '100px';
@@ -422,4 +428,14 @@ footer {
   display: flex;
   align-items: center;
   width: '100px';
+}
+.place {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  color: white;
+  width: 11%;
+}
+.city {
+  font-size: 20px;
 }
