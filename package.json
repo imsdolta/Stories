@@ -1,29 +1,33 @@
 {
-  "name": "stories",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "cross-env NODE_ENV=production node index.js "
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "connect-mongo": "^3.2.0",
-    "cross-env": "^7.0.2",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^4.0.4",
-    "express-session": "^1.17.1",
-    "method-override": "^3.0.0",
-    "moment": "^2.27.0",
-    "mongodb-client-encryption": "^1.1.0",
-    "mongoose": "^5.9.21",
-    "morgan": "^1.10.0",
-    "passport": "^0.4.1",
-    "passport-github": "^1.1.0",
-    "passport-google-oauth20": "^2.0.0"
-  }
+    "name": "stories",
+    "version": "1.0.0",
+    "description": "A place to write stories online.",
+    "main": "index.js",
+    "scripts": {
+        "start": "cross-env NODE_ENV=production node index.js ",
+        "dev": "cross-env NODE_ENV=test nodemon index.jss"
+    },
+    "keywords": [],
+    "author": "Sachin Dolta",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "connect-mongo": "^3.2.0",
+        "cross-env": "^7.0.2",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^4.0.4",
+        "express-session": "^1.17.1",
+        "method-override": "^3.0.0",
+        "moment": "^2.27.0",
+        "mongodb-client-encryption": "^1.1.0",
+        "mongoose": "^5.9.21",
+        "morgan": "^1.10.0",
+        "passport": "^0.4.1",
+        "passport-github": "^1.1.0",
+        "passport-google-oauth20": "^2.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.6"
+    }
 }
